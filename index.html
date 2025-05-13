@@ -9,13 +9,16 @@
       margin: 0;
       padding: 0;
       height: 100%;
+      background-color: #000; /* Color de fondo opcional */
     }
-    .genially-container {
-      width: 100%;
-      height: 100vh;
+
+    .iframe-wrapper {
       position: relative;
-      padding-bottom: 177.78%;
+      width: 100%;
+      padding-bottom: 177.78%; /* Proporción 360x640 */
+      height: 0;
     }
+
     iframe {
       position: absolute;
       top: 0;
@@ -24,18 +27,31 @@
       height: 100%;
       border: none;
     }
+
+    /* Para pantallas más grandes, como laptops o desktops */
+    @media (min-width: 768px) {
+      .iframe-wrapper {
+        width: 360px;
+        height: 640px;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      iframe {
+        width: 360px;
+        height: 640px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="genially-container">
+  <div class="iframe-wrapper">
     <iframe
       title="Catálogo Interfoods"
       src="https://view.genially.com/6807b709de88bca9dbf5cde1"
       frameborder="0"
-      allowscriptaccess="always"
-      allowfullscreen="true"
-      scrolling="yes"
-      allownetworking="all">
+      allowfullscreen
+      scrolling="yes">
     </iframe>
   </div>
 </body>
